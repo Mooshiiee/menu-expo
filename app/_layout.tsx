@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,13 +34,24 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#133434',
+            backgroundColor: '#3f8d5e',
           },
-          headerTitle: 'menu',
-          headerTintColor: '#19ae4b',
+          headerTitle: 'menü',
+          headerTintColor: '#133434',
           headerTitleStyle: {
             fontWeight: 'bold',
+            fontSize: 24
           },
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => console.log('Left button pressed')}>
+              <Ionicons name="menu" size={30} color="#fff" style={{ marginLeft: 10 }} />
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <TouchableOpacity onPress={() => console.log('Right button pressed')}>
+              <Ionicons name="notifications" size={30} color="#fff" style={{ marginRight: 10 }} />
+            </TouchableOpacity>
+          ),
         }}
       >
         <Stack.Screen 
