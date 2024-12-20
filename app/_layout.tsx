@@ -34,6 +34,7 @@ export default function RootLayout() {
           headerStyle: {
             backgroundColor: '#133434',
           },
+          headerTitle: 'menu',
           headerTintColor: '#19ae4b',
           headerTitleStyle: {
             fontWeight: 'bold',
